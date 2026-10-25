@@ -1,15 +1,16 @@
 modLoader = "javafml"
 # The loader version doesn't matter. Modify the Forge and/or Minecraft version ranges instead.
 loaderVersion = "[0,)"
-issueTrackerURL = "https://github.com/Layers-of-Railways/CreateNumismatics/issues"
-license = "LGPL"
+issueTrackerURL = "https://github.com/Cha0sCollective/CreateNumismatics/issues"
+license = "LGPL-3.0-or-later"
 
 [[mods]]
 modId = "numismatics"
 version = "${version}"
-displayName = "Create: Numismatics"
+displayName = "Create: Numismatics (Ch4oS Patch)"
 authors = "IThundxr, Violet, Pink, Slimeist, Razziel"
 description = '''
+Unofficial Ch4oS build with a client sub-account rename fix.
 A visually-pleasing and redstone-integrated Create-styled currency mod
 '''
 logoFile = "icon.png"

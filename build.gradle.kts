@@ -83,7 +83,7 @@ allprojects {
     // example: 1.0.0+fabric-1.19.2-build.100 (or -local)
     val build = buildNumber?.let { "-build.${it}" } ?: "-local"
 
-    version = "${"mod_version"()}+${project.name}-mc${"minecraft_version"() + if (isRelease) "" else build}"
+    version = "${"mod_version"()}+${project.name}-mc${"minecraft_version"() + if (isRelease) "" else build}-ch4os.${"ch4os_patch"()}"
 
     tasks.withType<JavaCompile>().configureEach {
         options.encoding = "UTF-8"
@@ -190,6 +190,9 @@ subprojects {
         configurations = listOf(shadowCommon)
         exclude("architectury.common.json")
         destinationDirectory = layout.buildDirectory.dir("devlibs").get()
+        from(rootProject.files("LICENSE", "COPYING")) {
+            into("META-INF/licenses/numismatics")
+        }
     }
 
     @Suppress("RedundantLambdaOrAnonymousFunction")
@@ -238,6 +241,9 @@ subprojects {
         val commonSources = project(":common").tasks.getByName<Jar>("sourcesJar")
         dependsOn(commonSources)
         from(commonSources.archiveFile.map { zipTree(it) })
+        from(rootProject.files("LICENSE", "COPYING")) {
+            into("META-INF/licenses/numismatics")
+        }
 
         manifest {
             attributes(mapOf("Git-Hash" to gitHash))
