@@ -1,7 +1,8 @@
 **Unofficial Ch4oS fork.** Fixes the client crash when renaming sub-accounts.
 Changed by Cha0sCollective on 2026-10-25, based on upstream release commit
 `b4cbb96f5cd2fbec80fdbb2f6f3cc3abcd4f6bf5`. Builds use the `ch4os.1` suffix.
-Accounts, recipes and permissions are unchanged. In-game testing is still required.
+Accounts, recipes and permissions are unchanged. In-game testing has shown 
+successful correction of crash when renaming sub accounts on a dedicated server.
 
 Build with JDK 21 in PowerShell:
 
